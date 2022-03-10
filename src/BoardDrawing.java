@@ -10,6 +10,12 @@ import javax.swing.JPanel;
 //note: board does not change dynamically 
 //note: board shape and window aesthetics to be set
 //note: unification of colors not done
+
+/**
+ * Descripción de la clase
+ * @author NombreDelAutor
+ * @version 2022.1.1
+ */
 public class BoardDrawing extends JPanel {
 
     /**
@@ -26,6 +32,12 @@ public class BoardDrawing extends JPanel {
     //ArrayList<Portal> portals;
     //ArrayList<Player> players;
 
+    /**
+     * Descripción del constructor
+     * @param row 
+     * @param col 
+     * @param bs 
+     */
     public BoardDrawing(int row, int col, BoardScreen bs) {
         this.bs = bs;
 
@@ -65,6 +77,10 @@ public class BoardDrawing extends JPanel {
 
     }
 
+    /**
+     * Descripcion del método
+     * @param g 
+     */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;//.create();
@@ -100,6 +116,14 @@ public class BoardDrawing extends JPanel {
 
     }
 
+    /**
+     * Descripción del método
+     * @param xOffset
+     * @param cellWidth
+     * @param yOffset
+     * @param cellHeight
+     * @param g2d 
+     */
     private void createCells(int xOffset, int cellWidth, int yOffset, int cellHeight, Graphics2D g2d) {
         if (cells.isEmpty()) {
             for (int i = 0; i < row; i++) {
@@ -125,6 +149,12 @@ public class BoardDrawing extends JPanel {
         }
     }
 
+    /**
+     * Descripción del método
+     * @param g2d
+     * @param cellWidth
+     * @param cellHeight 
+     */
     private void drawCells(Graphics2D g2d, int cellWidth, int cellHeight) {
         g2d.setColor(Color.BLUE);
         int i = 0;                                // i is our visible numbering
@@ -158,6 +188,10 @@ public class BoardDrawing extends JPanel {
         }
     }
 
+    /**
+     * Descripción del método
+     * @param g2d 
+     */
     private void drawSnakes(Graphics2D g2d) {
 
         for (Portal port : bs.portals) {
@@ -196,6 +230,12 @@ public class BoardDrawing extends JPanel {
 		}
 	}
      */
+    
+    /**
+     * Descripción del método
+     * @param pnos
+     * @return String
+     */
     public String ensurePlayerPosition(int pnos) {
         String message = "";
         for (Portal port : bs.portals) {
@@ -215,6 +255,12 @@ public class BoardDrawing extends JPanel {
 	public void setPlayer(int a){
 		player = a;
 	}
+     */
+    
+    /**
+     * Descripción del método
+     * @param a
+     * @param pnos 
      */
     public void setPlayer(int a, int pnos) {
         bs.players.get(pnos).incPosition(a);
